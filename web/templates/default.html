@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>微信扫描二维码下载APP</title>
+    <script type="text/javascript">
+        var Terminal = {
+            platform : function(){
+                var nua = navigator.userAgent;
+                return {
+                    // 判断终端系统
+                    isAndroid: /android/i.test(nua),
+                    isIOS: /(iphone|ipod|ipad|ios)/i.test(nua),
+                };
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        // 根据不同的终端，跳转到不同的地址
+        //默认为安卓链接
+//        var theUrl = 'http://imtt.dd.qq.com/16891/3E2771F7DAC03AC815782808B2FE7601.apk?fsname=com.tencent.ttpic_5.2.0.1739_520.apk&csr=3554';
+        var theUrl = {{ androidUrl }};
+        if(Terminal.platform.isAndroid){
+//            theUrl = 'http://imtt.dd.qq.com/16891/3E2771F7DAC03AC815782808B2FE7601.apk?fsname=com.tencent.ttpic_5.2.0.1739_520.apk&csr=3554';
+            theUrl = {{ androidUrl }};
+        }else if(Terminal.platform.isIOS){
+//            theUrl = 'https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8';
+            theUrl = {{ iosUrl }};
+        }
+        location.href = theUrl;
+    </script>
+</head>
+<body>
+    <!--
+
+    -->
+</body>
+</html>

@@ -1,0 +1,18 @@
+DOMAIN:
+    127.0.0.1:8008
+FIELD:
+    weixin.sogou.com
+
+ITUNESURL:
+    https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8
+
+WEBSERVER:
+    bind: 106.14.149.129
+    port: 8008
+
+QRNAME:
+    qr_code.png
+
+REDIS:
+    HOST: 127.0.0.1
+    PORT: 6379
